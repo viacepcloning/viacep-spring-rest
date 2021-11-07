@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS address;
+
 CREATE TABLE IF NOT EXISTS address (
   id SERIAL,
   cep VARCHAR(30),
