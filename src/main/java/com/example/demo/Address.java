@@ -3,6 +3,8 @@ package com.example.demo;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 
@@ -16,7 +18,7 @@ import javax.validation.constraints.NotEmpty;
 public class Address {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;
 	
 	@Column(unique=true)
@@ -35,6 +37,7 @@ public class Address {
 	
 	String ibge;
 	String gia;
+	String ddd;
 	String siafi;
 	
 	/**
@@ -96,6 +99,10 @@ public class Address {
 
 	public String getGia() {
 		return gia;
+	}
+
+	public String getDdd() {
+		return ddd;
 	}
 
 	public String getSiafi() {
