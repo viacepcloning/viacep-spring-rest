@@ -21,7 +21,6 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	Long id;
 	
-	@Column(unique=true)
     @NotEmpty
 	String cep;
 	

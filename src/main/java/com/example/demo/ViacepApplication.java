@@ -18,11 +18,11 @@ public class ViacepApplication {
 		SpringApplication.run(ViacepApplication.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner startup(AddressRepository addressRepository) {
-		return args -> {
-			addressRepository
-					.save(new Address("90110170", "Rua Dezessete de Junho", "", "Menino Deus", "Porto Alegre", "RS"));
-		};
-	}
+//	@Bean
+//	public CommandLineRunner startup(AddressRepository addressRepository) {
+//		return args -> {
+//			addressRepository
+//					.save(new Address("90110170", "Rua Dezessete de Junho", "", "Menino Deus", "Porto Alegre", "RS"));
+//		};
+//	}
 }
