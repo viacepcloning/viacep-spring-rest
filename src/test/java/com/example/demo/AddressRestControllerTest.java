@@ -25,7 +25,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
  */
 @SpringBootTest
 @RunWith(SpringJUnit4ClassRunner.class)
-//@ContextConfiguration(classes = ApplicationTestConfig.class)
 @WebAppConfiguration
 public class AddressRestControllerTest {
 
@@ -42,11 +41,9 @@ public class AddressRestControllerTest {
     @Before
     public void initOwners() {
         this.mockMvc = MockMvcBuilders.standaloneSetup(addressRestController)
-             //   .setControllerAdvice(new ExceptionControllerAdvice())
         		.build();
         address = new Address("90020004", "Rua dos Andradas", "de 0664 a 0834 - lado par",
         		"Centro Histórico", "Porto Alegre", "RS");
-    
     }
     
     @Test
