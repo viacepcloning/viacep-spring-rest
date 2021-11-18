@@ -3,7 +3,7 @@ package com.example.demo;
 import org.springframework.data.repository.Repository;
 
 /**
- * Interface AddressRepository is a repository to retrieve postal addresses by zip code.
+ * Interface {@code AddressRepository} is a repository to retrieve postal addresses by zip code.
  * 
  * @author marco.mangan@gmail.com
  *

@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * RestController retrieves a postal address by zip code.
+ * {@code AddressRestController} retrieves a postal address by zip code.
  * 
  * Zip is a 8-digit string. 
  * 

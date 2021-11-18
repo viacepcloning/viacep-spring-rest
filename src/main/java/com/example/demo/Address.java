@@ -1,6 +1,5 @@
 package com.example.demo;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,7 +8,7 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 
 /**
- * Class {code}Address{code} is a postal address.
+ * The {@code Address} class represents a postal address.
  * 
  * @author marco.mangan@gmail.com
  *
@@ -19,27 +18,29 @@ public class Address {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	Long id;
-	
-    @NotEmpty
-	String cep;
-	
-    @NotEmpty
-	String logradouro;
+	private Long id;
 
-    String complemento;
-	String bairro;
-	String localidade;
-	
-    @NotEmpty
-	String uf;
-	
-	String ibge;
-	String gia;
-	String ddd;
-	String siafi;
-	
+	@NotEmpty
+	private String cep;
+
+	@NotEmpty
+	private String logradouro;
+
+	private String complemento;
+	private String bairro;
+	private String localidade;
+
+	@NotEmpty
+	private String uf;
+
+	private String ibge;
+	private String gia;
+	private String ddd;
+	private String siafi;
+
 	/**
+	 * Creates a new {@code Address} that contains a {@code cep} and postal
+	 * information.
 	 * 
 	 * @param cep
 	 * @param logradouro
@@ -58,54 +59,100 @@ public class Address {
 		this.localidade = localidade;
 		this.uf = uf;
 	}
-	
+
 	/**
 	 * 
 	 */
-	protected Address() {}
+	protected Address() {
+		
+	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public Long getId() {
 		return id;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getCep() {
 		return cep;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getLogradouro() {
 		return logradouro;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getComplemento() {
 		return complemento;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getBairro() {
 		return bairro;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getLocalidade() {
 		return localidade;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getUf() {
 		return uf;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getIbge() {
 		return ibge;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getGia() {
 		return gia;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getDdd() {
 		return ddd;
 	}
 
+	/**
+	 * 
+	 * @return
+	 */
 	public String getSiafi() {
 		return siafi;
 	}
-		
+
 }
