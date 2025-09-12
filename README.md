@@ -1,7 +1,7 @@
 # viacep-spring-rest
 
 Sample address
-http://localhost:5000/api/addresses/90110170
+http://localhost:8080/api/addresses/90110170
 
 Swagger UI
-http://localhost:5000/swagger-ui.html
+http://localhost:8080/swagger-ui.html
