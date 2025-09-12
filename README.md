@@ -2,7 +2,7 @@
 
 
 
-## Running petclinic locally
+## Running locally
 ```
 	git clone https://github.com/masmangan/viacep-spring-rest.git
 	cd viacep-spring-rest
