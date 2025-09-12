@@ -1,5 +1,15 @@
 # viacep-spring-rest
 
+
+
+## Running petclinic locally
+```
+	git clone https://github.com/masmangan/viacep-spring-rest.git
+	cd viacep-spring-rest
+	mvn spring-boot:run
+```
+
+
 Sample address
 http://localhost:8080/api/addresses/90110170
 
