@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.viacep;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

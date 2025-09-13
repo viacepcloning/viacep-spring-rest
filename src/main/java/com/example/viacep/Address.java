@@ -1,11 +1,11 @@
-package com.example.demo;
+package com.example.viacep;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 
-import javax.persistence.Id;
-import javax.validation.constraints.NotEmpty;
+import jakarta.persistence.Id;
+// FIXME import javax.validation.constraints.NotEmpty;
 
 /**
  * The {@code Address} class represents a postal address.
@@ -20,17 +20,17 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@NotEmpty
+	// FIXME: @NotEmpty
 	private String cep;
 
-	@NotEmpty
+	// FIXME:@NotEmpty
 	private String logradouro;
 
 	private String complemento;
 	private String bairro;
 	private String localidade;
 
-	@NotEmpty
+	// FIXME:@NotEmpty
 	private String uf;
 
 	private String ibge;
@@ -49,8 +49,10 @@ public class Address {
 	 * @param localidade
 	 * @param uf
 	 */
-	public Address(@NotEmpty String cep, @NotEmpty String logradouro, String complemento, String bairro,
-			String localidade, @NotEmpty String uf) {
+// FIXME:	public Address(@NotEmpty String cep, @NotEmpty String logradouro, String complemento, String bairro,
+//			String localidade, @NotEmpty String uf) {
+	public Address( String cep,  String logradouro, String complemento, String bairro,
+			String localidade,  String uf) {
 		super();
 		this.cep = cep;
 		this.logradouro = logradouro;
