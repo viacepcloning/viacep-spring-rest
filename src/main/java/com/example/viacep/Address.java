@@ -5,7 +5,8 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
 import jakarta.persistence.Id;
-// FIXME import javax.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 
 /**
  * The {@code Address} class represents a postal address.
@@ -20,17 +21,18 @@ public class Address {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	// FIXME: @NotEmpty
+	@NotEmpty
+	@Pattern(regexp = "\\d{8}", message = "CEP must have exactly 8 digits (only numbers)")
 	private String cep;
 
-	// FIXME:@NotEmpty
+	@NotEmpty
 	private String logradouro;
 
 	private String complemento;
 	private String bairro;
 	private String localidade;
 
-	// FIXME:@NotEmpty
+	@NotEmpty
 	private String uf;
 
 	private String ibge;
@@ -49,10 +51,8 @@ public class Address {
 	 * @param localidade
 	 * @param uf
 	 */
-// FIXME:	public Address(@NotEmpty String cep, @NotEmpty String logradouro, String complemento, String bairro,
-//			String localidade, @NotEmpty String uf) {
-	public Address( String cep,  String logradouro, String complemento, String bairro,
-			String localidade,  String uf) {
+	public Address(@NotEmpty String cep, @NotEmpty String logradouro, String complemento, String bairro,
+			String localidade, @NotEmpty String uf) {
 		super();
 		this.cep = cep;
 		this.logradouro = logradouro;
@@ -66,7 +66,7 @@ public class Address {
 	 * 
 	 */
 	protected Address() {
-		
+
 	}
 
 	/**
