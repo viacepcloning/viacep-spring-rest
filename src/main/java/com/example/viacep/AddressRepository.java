@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.viacep;
 
 import org.springframework.data.repository.Repository;
 
@@ -9,9 +9,6 @@ import org.springframework.data.repository.Repository;
  *
  */
 public interface AddressRepository extends Repository<Address, Long> {
-
 	Address findByCep(String cep);
-
 	void save(Address address);
-
 }

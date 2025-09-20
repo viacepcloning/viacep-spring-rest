@@ -1,54 +1,42 @@
-package com.example.demo;
+package com.example.viacep;
 
-import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
+import org.junit.jupiter.api.Test;
+
+import static org.mockito.Mockito.when;
 
 /**
  * 
  * @author marco.mangan@gmail.com
  *
  */
-@SpringBootTest
-@RunWith(SpringJUnit4ClassRunner.class)
-@WebAppConfiguration
+@WebMvcTest(controllers = AddressRestController.class)
+@Import(SecurityConfig.class) // traga o SecurityFilterChain e o UserDetailsService
 public class AddressRestControllerTest {
 
-	@Autowired
-	private AddressRestController addressRestController;
-
-	@MockBean
+	@MockitoBean
 	private AddressRepository addressRepository;
 
+    @Autowired
     private MockMvc mockMvc;
-    
-    private Address address;
-
-    @Before
-    public void initOwners() {
-        this.mockMvc = MockMvcBuilders.standaloneSetup(addressRestController)
-        		.build();
-        address = new Address("90020004", "Rua dos Andradas", "de 0664 a 0834 - lado par",
-        		"Centro Histórico", "Porto Alegre", "RS");
-    }
     
     @Test
     public void testGetAddressSuccess() throws Exception {
-        given(this.addressRepository.findByCep("90020004")).willReturn(address);
+        Address address = new Address("90020004", "Rua dos Andradas", "de 0664 a 0834 - lado par",
+        		"Centro Histórico", "Porto Alegre", "RS");
+ 
+        when(this.addressRepository.findByCep("90020004")).thenReturn(address);
         this.mockMvc.perform(get("/api/addresses/90020004")
                 .accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isOk())
@@ -59,7 +47,7 @@ public class AddressRestControllerTest {
 
     @Test
     public void testGetAddressNotFound() throws Exception {
-        given(this.addressRepository.findByCep("90020001")).willReturn(null);
+        when(this.addressRepository.findByCep("90020001")).thenReturn(null);
         this.mockMvc.perform(get("/api/addresses/90020001")
                 .accept(MediaType.APPLICATION_JSON))
             .andExpect(status().isNotFound());

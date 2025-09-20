@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.viacep;
 
 import java.util.logging.Logger;
 
