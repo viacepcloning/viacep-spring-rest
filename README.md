@@ -18,4 +18,4 @@ http://localhost:8080/api/addresses/90110170
 Swagger UI
 http://localhost:8080/swagger-ui.html
 
-<img width="1067" height="1065" alt="image" src="https://github.com/user-attachments/assets/ac05e9d7-556c-43f8-bffe-387e3a61ea7d" />
+<img width="1014" height="1071" alt="image" src="https://github.com/user-attachments/assets/11ed9c11-11c1-4ae2-b57e-a55b58da60fb" />
