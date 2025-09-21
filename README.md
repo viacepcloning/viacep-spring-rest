@@ -10,6 +10,7 @@
 ```
 
 ## Testing
+
 Sample address
 http://localhost:8080/api/addresses/90110170
 
@@ -19,3 +20,6 @@ Swagger UI
 http://localhost:8080/swagger-ui.html
 
 <img width="1014" height="1071" alt="image" src="https://github.com/user-attachments/assets/11ed9c11-11c1-4ae2-b57e-a55b58da60fb" />
+
+
+Actuator
