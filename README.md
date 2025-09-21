@@ -22,6 +22,6 @@ http://localhost:8080/swagger-ui.html
 <img width="1014" height="1071" alt="image" src="https://github.com/user-attachments/assets/11ed9c11-11c1-4ae2-b57e-a55b58da60fb" />
 
 
-Actuator
+Actuator http://localhost:8080/actuator
 
 <img width="961" height="386" alt="image" src="https://github.com/user-attachments/assets/ef77860c-fdcd-4855-b9bf-5f1d18326db4" />
