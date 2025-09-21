@@ -1,6 +1,6 @@
 # viacep-spring-rest
 [![CodeQL](https://github.com/masmangan/viacep-spring-rest/actions/workflows/codeql.yml/badge.svg)](https://github.com/masmangan/viacep-spring-rest/actions/workflows/codeql.yml)
- 
+[![SonarQube](https://github.com/masmangan/viacep-spring-rest/actions/workflows/build.yml/badge.svg)](https://github.com/masmangan/viacep-spring-rest/actions/workflows/build.yml) 
 
 ## Running locally
 ```
