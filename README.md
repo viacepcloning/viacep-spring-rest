@@ -14,7 +14,7 @@
 Sample address
 http://localhost:8080/api/addresses/90110170
 
-<img width="965" height="336" alt="image" src="https://github.com/user-attachments/assets/d5a18786-37b4-4599-b8d7-fd2e61ef3f7e" />
+<img width="961" height="386" alt="image" src="https://github.com/user-attachments/assets/c5a34767-c163-44cb-8bb5-c7925f147012" />
 
 Swagger UI
 http://localhost:8080/swagger-ui.html
@@ -23,3 +23,5 @@ http://localhost:8080/swagger-ui.html
 
 
 Actuator
+
+<img width="961" height="386" alt="image" src="https://github.com/user-attachments/assets/ef77860c-fdcd-4855-b9bf-5f1d18326db4" />
