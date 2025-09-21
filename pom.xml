@@ -29,6 +29,7 @@
 	</scm>
 	<properties>
 		<java.version>21</java.version>
+  		<sonar.organization>masmangan</sonar.organization>
 	</properties>
 	<dependencies>
 		<dependency>
