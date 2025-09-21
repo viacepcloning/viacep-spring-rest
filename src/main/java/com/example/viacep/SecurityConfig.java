@@ -15,7 +15,7 @@ class SecurityConfig {
   @Bean
   SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     http
-      .csrf(csrf -> csrf.disable()) // API stateless; reative CSRF se usar cookies/form
+      //.csrf(csrf -> csrf.disable()) // API stateless; reative CSRF se usar cookies/form
       .authorizeHttpRequests(auth -> auth
           // Swagger/OpenAPI (ajuste se usar springdoc)
           .requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs/**").permitAll()
