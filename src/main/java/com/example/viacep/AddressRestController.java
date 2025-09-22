@@ -1,5 +1,6 @@
 package com.example.viacep;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,10 +11,8 @@ import org.springframework.http.ResponseEntity;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -31,8 +30,12 @@ public class AddressRestController {
 
 	private Logger logger = Logger.getLogger(AddressRestController.class.getCanonicalName());
 	
-	@Autowired
 	private AddressRepository addressRepository;
+
+	@Autowired
+	public AddressRestController(AddressRepository addressRepository) {
+			this.addressRepository = addressRepository;
+	}
 
 	/**
 	 * Gets a postal address by zip code.
@@ -46,12 +49,12 @@ public class AddressRestController {
 	 */
 	@GetMapping(value = "/{zip}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Address> getAddress(final @PathVariable String zip) {
-		String safe_zip = zip;
-		if (safe_zip != null) {
-			safe_zip = safe_zip.replaceAll("[\n\r]", "_");
+		String safeZip = zip;
+		if (safeZip != null) {
+			safeZip = safeZip.replaceAll("[\n\r]", "_");
 		}
-		logger.info(String.format("getAddress on: [%s]", safe_zip));
-		final Address address = addressRepository.findByCep(safe_zip);
+		logger.log(Level.INFO, "getAddress on: {0}", safeZip);
+		final Address address = addressRepository.findByCep(safeZip);
 		if (address == null) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
