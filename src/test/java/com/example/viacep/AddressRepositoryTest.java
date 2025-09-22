@@ -16,7 +16,7 @@ public class AddressRepositoryTest {
 	private AddressRepository addressRepository;
 
 	@Test
-	public void shouldFindAddressByCep() {
+	void shouldFindAddressByCep() {
 		String cep = "90110170";
 		Address address = this.addressRepository.findByCep(cep);
 		assertThat(address.getCep()).isEqualTo("90110170");

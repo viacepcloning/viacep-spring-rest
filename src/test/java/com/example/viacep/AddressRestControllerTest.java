@@ -32,7 +32,7 @@ public class AddressRestControllerTest {
     private MockMvc mockMvc;
     
     @Test
-    public void testGetAddressSuccess() throws Exception {
+    void testGetAddressSuccess() throws Exception {
         Address address = new Address("90020004", "Rua dos Andradas", "de 0664 a 0834 - lado par",
         		"Centro Histórico", "Porto Alegre", "RS");
  
@@ -46,7 +46,7 @@ public class AddressRestControllerTest {
     }
 
     @Test
-    public void testGetAddressNotFound() throws Exception {
+    void testGetAddressNotFound() throws Exception {
         when(this.addressRepository.findByCep("90020001")).thenReturn(null);
         this.mockMvc.perform(get("/api/addresses/90020001")
                 .accept(MediaType.APPLICATION_JSON))
