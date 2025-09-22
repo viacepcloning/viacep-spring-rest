@@ -3,12 +3,16 @@ package com.example.viacep;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -40,13 +44,17 @@ public class AddressRestController {
 	 * 			if zip was not found, 404 NOT FOUND,
 	 * 			if bad request, 500.
 	 */
-	@RequestMapping(value = "/{zip}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(value = "/{zip}", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Address> getAddress(final @PathVariable String zip) {
-		logger.info(String.format("getAddress on: [%s]", zip));
-		final Address address = addressRepository.findByCep(zip);
-		if (address == null) {
-			return new ResponseEntity<Address>(HttpStatus.NOT_FOUND);
+		String safe_zip = zip;
+		if (safe_zip != null) {
+			safe_zip = safe_zip.replaceAll("[\n\r]", "_");
 		}
-		return new ResponseEntity<Address>(address, HttpStatus.OK);
+		logger.info(String.format("getAddress on: [%s]", safe_zip));
+		final Address address = addressRepository.findByCep(safe_zip);
+		if (address == null) {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		return new ResponseEntity<>(address, HttpStatus.OK);
 	}
 }
