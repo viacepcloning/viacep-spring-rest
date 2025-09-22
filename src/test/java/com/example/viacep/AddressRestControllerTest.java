@@ -23,7 +23,7 @@ import static org.mockito.Mockito.when;
  */
 @WebMvcTest(controllers = AddressRestController.class)
 @Import(SecurityConfig.class) // traga o SecurityFilterChain e o UserDetailsService
-public class AddressRestControllerTest {
+class AddressRestControllerTest {
 
 	@MockitoBean
 	private AddressRepository addressRepository;
