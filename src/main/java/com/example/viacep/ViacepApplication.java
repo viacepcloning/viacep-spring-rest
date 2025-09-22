@@ -20,9 +20,9 @@ public class ViacepApplication {
 
 	@Bean
 	public CommandLineRunner startup(AddressRepository addressRepository) {
-		return args -> {
+		return args -> 
 			addressRepository
 					.save(new Address("90110170", "Rua Dezessete de Junho", "", "Menino Deus", "Porto Alegre", "RS"));
-		};
+		
 	}
 }
