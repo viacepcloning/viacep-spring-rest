@@ -30,12 +30,4 @@ class SecurityConfig {
     return http.build();
   }
 
-  @Bean
-  UserDetailsService users() {
-    var user = User.withUsername("user")
-        .password("{noop}password") // apenas para testes; use BCrypt em produção
-        .roles("USER")
-        .build();
-    return new InMemoryUserDetailsManager(user);
-  }
 }
