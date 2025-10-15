@@ -24,7 +24,7 @@ class SecurityConfig {
           // Leitura pública
           .requestMatchers(HttpMethod.GET, "/api/addresses/**").permitAll()
           // Demais operações exigem autenticação
-          .anyRequest().authenticated()
+          .anyRequest().denyAll()
       )
       .httpBasic(Customizer.withDefaults()); // ou .formLogin(Customizer.withDefaults())
     return http.build();
